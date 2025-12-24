@@ -1,12 +1,12 @@
 <?php
 // Filename: register.php
-// Yeh file naye user ko register karne ke liye hai.
+
 
 session_start();
 include_once 'config/database.php';
 include_once 'includes/functions.php';
 
-// Agar user pehle se login hai, to dashboard par bhejo
+
 if(isset($_SESSION['user_id'])){ header("Location: index.php"); }
 
 $message = "";
@@ -21,16 +21,16 @@ if($_POST){
     $confirm_password = $_POST['confirm_password'];
     $role = cleanInput($_POST['role']); // 'admin' ya 'pharmacist'
 
-    // 1. Validation: Kya passwords match karte hain?
+   
     if($password !== $confirm_password){
         $error = "Passwords match nahi kar rahe!";
     } 
-    // 2. Validation: Password length
+    
     elseif(strlen($password) < 6){
         $error = "Password kam az kam 6 characters ka hona chahiye.";
     } 
     else {
-        // 3. Check: Kya username pehle se majood hai?
+      
         $checkQuery = "SELECT id FROM users WHERE username = :username";
         $checkStmt = $db->prepare($checkQuery);
         $checkStmt->bindParam(':username', $username);
@@ -39,8 +39,8 @@ if($_POST){
         if($checkStmt->rowCount() > 0){
             $error = "Yeh Username pehle se liya ja chuka hai.";
         } else {
-            // 4. Create User (Insert)
-            // Note: Password ko hamesha HASH karke save karein (Security)
+            
+            
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             $query = "INSERT INTO users (username, password, role) VALUES (:username, :password, :role)";
@@ -86,7 +86,7 @@ if($_POST){
             </div>
         <?php endif; ?>
 
-        <?php if(empty($message)): // Form tab hi dikhao jab success na ho ?>
+        <?php if(empty($message)):  ?>
         <form method="POST">
             <div class="mb-3">
                 <label class="block text-gray-700 text-sm font-bold mb-1">Username</label>
