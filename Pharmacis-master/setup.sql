@@ -1,4 +1,4 @@
-USE pharmacis;
+SET FOREIGN_KEY_CHECKS=0;
 
 -- 1. Create Orders Table (Receipt Header)
 CREATE TABLE IF NOT EXISTS orders (
@@ -24,4 +24,4 @@ CREATE TABLE IF NOT EXISTS order_items (
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
--- Note: Purana 'sales' table ab use nahi hoga, hum in naye tables ko use karenge.
+SET FOREIGN_KEY_CHECKS=1;
