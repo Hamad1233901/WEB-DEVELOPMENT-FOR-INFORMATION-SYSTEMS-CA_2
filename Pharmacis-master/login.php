@@ -5,7 +5,7 @@ include_once 'config/database.php';
 include_once 'includes/functions.php';
 
 if(isset($_SESSION['user_id'])){ 
-    // Agar pehle se login hai to role check karo
+
     if($_SESSION['role'] == 'admin'){
         header("Location: index.php");
     } else {
