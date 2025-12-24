@@ -33,8 +33,8 @@ if($_POST){
             $_SESSION['username'] = $row['username'];
             $_SESSION['role'] = $row['role'];
             
-            // --- YAHAN CHANGE KIYA HAI ---
-            // Role ke hisab se alag page par bhejo
+            
+            
             if($row['role'] == 'admin') {
                 header("Location: index.php"); // Admin -> Dashboard
             } else {
