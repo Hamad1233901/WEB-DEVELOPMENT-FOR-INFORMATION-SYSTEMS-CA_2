@@ -1,7 +1,5 @@
 <?php
 // Filename: includes/functions.php
-// Yeh file chote functions ke liye hai jo pure project mein use ho sakte hain.
-
 function cleanInput($data) {
     $data = trim($data);
     $data = stripslashes($data);
