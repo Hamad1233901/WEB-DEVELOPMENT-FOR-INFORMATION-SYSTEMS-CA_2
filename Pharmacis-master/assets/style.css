@@ -1,0 +1,17 @@
+/* Filename: assets/style.css */
+/* Yeh file apki website ki designing ke liye hai */
+
+.logo-text {
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/* Table row hover effect */
+.table-row-hover:hover {
+    background-color: #f3f4f6;
+    transition: 0.2s;
+}
+
+.auth-box {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
