@@ -1,7 +1,5 @@
 <?php
 // Filename: config/database.php
-// Yeh file database se connect karne ke liye hai.
-
 class Database {
     private $host = "localhost";
     private $db_name = "pharmacis";
