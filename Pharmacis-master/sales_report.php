@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Security: Sirf Admin access kar sakta hai
+
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') { 
     header("Location: index.php"); exit; 
 }
@@ -9,9 +9,7 @@ include_once 'config/database.php';
 $db = (new Database())->getConnection();
 $page_title = "Sales Reports";
 
-// --- LOGIC CORRECTION ---
-// Hum 'orders' table ko 'users' table ke sath JOIN kar rahe hain.
-// 'u.username' wo banda hai jiski ID 'orders.sold_by' mein save hai.
+.
 $query = "SELECT o.id, o.total_amount, o.cash_given, o.change_return, o.created_at, u.username 
           FROM orders o
           JOIN users u ON o.sold_by = u.id 
@@ -61,7 +59,7 @@ $stmt = $db->query($query);
                                 <!-- SOLD BY (Corrected) -->
                                 <td class="py-3 px-4">
                                     <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-bold capitalize">
-                                        <?php echo $row['username']; // Ye database wala naam hai ?>
+                                        <?php echo $row['username'];  ?>
                                     </span>
                                 </td>
                                 
