@@ -1,4 +1,7 @@
+
 SET FOREIGN_KEY_CHECKS=0;
+
+USE railway;
 
 -- 1. Create Orders Table (Receipt Header)
 CREATE TABLE IF NOT EXISTS orders (
