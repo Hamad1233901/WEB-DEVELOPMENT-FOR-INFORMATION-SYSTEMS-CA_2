@@ -1,6 +1,5 @@
 <?php
 // Filename: api/products.php
-// Yeh file JSON format mein data deti hai (Requirement: Web Service / API).
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
