@@ -19,7 +19,7 @@ if($_POST){
     $username = cleanInput($_POST['username']);
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
-    $role = cleanInput($_POST['role']); // 'admin' ya 'pharmacist'
+    $role = cleanInput($_POST['role']); // 'admin' OR 'pharmacist'
 
    
     if($password !== $confirm_password){
